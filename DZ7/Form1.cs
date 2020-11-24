@@ -13,6 +13,7 @@ namespace DZ7
     public partial class Form1 : Form
     {
         int _count;
+        int value;
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +33,15 @@ namespace DZ7
             lblNumber.Text = (int.Parse(lblNumber.Text) + 1).ToString();
             StepNum.Text = (int.Parse(StepNum.Text) + 1).ToString();
             Game.Text = "Стоп";
+            if(check(int.Parse(lblNumber.Text), value))
+            {
+                RndNum.Text = "Ты выиграл!";
+                timer1.Tick -= Tick;
+            }
+            else
+            {
+                RndNum.Text = value.ToString();
+            }
         }
 
         private void btnCommand2_Click(object sender, EventArgs e)
@@ -39,6 +49,15 @@ namespace DZ7
             lblNumber.Text = (int.Parse(lblNumber.Text) * 2).ToString();
             StepNum.Text = (int.Parse(StepNum.Text) + 1).ToString();
             Game.Text = "Стоп";
+            if (check(int.Parse(lblNumber.Text), value))
+            {
+                RndNum.Text = "Ты выиграл!";
+                timer1.Tick -= Tick;
+            }
+            else
+            {
+                RndNum.Text = value.ToString();
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -56,7 +75,7 @@ namespace DZ7
                 timer1.Tick += Tick;
                 Game.Text = "Сдаться";
                 Random rnd = new Random();
-                int value = rnd.Next(1, 50);
+                value = rnd.Next(1, 50);
                 RndNum.Text = value.ToString();
             }
             else
@@ -71,6 +90,17 @@ namespace DZ7
         private void Tick(object t, EventArgs eventArgs)
         {
             TimerGame.Text = (++_count).ToString();
+        }
+        private bool check(int num1, int num2)
+        {
+            if(num1 == num2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void StopGame_Click(object sender, EventArgs e)

@@ -38,7 +38,6 @@ namespace DZ7
             this.Game = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.TimerGame = new System.Windows.Forms.Label();
-            this.StopGame = new System.Windows.Forms.Button();
             this.RndNum = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -94,7 +93,7 @@ namespace DZ7
             // 
             this.Game.Location = new System.Drawing.Point(176, 12);
             this.Game.Name = "Game";
-            this.Game.Size = new System.Drawing.Size(95, 52);
+            this.Game.Size = new System.Drawing.Size(95, 81);
             this.Game.TabIndex = 5;
             this.Game.Text = "button1";
             this.Game.UseVisualStyleBackColor = true;
@@ -113,16 +112,6 @@ namespace DZ7
             this.TimerGame.TabIndex = 6;
             this.TimerGame.Text = "label1";
             // 
-            // StopGame
-            // 
-            this.StopGame.Location = new System.Drawing.Point(176, 70);
-            this.StopGame.Name = "StopGame";
-            this.StopGame.Size = new System.Drawing.Size(95, 23);
-            this.StopGame.TabIndex = 7;
-            this.StopGame.Text = "button1";
-            this.StopGame.UseVisualStyleBackColor = true;
-            this.StopGame.Click += new System.EventHandler(this.StopGame_Click);
-            // 
             // RndNum
             // 
             this.RndNum.AutoSize = true;
@@ -138,7 +127,6 @@ namespace DZ7
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 224);
             this.Controls.Add(this.RndNum);
-            this.Controls.Add(this.StopGame);
             this.Controls.Add(this.TimerGame);
             this.Controls.Add(this.Game);
             this.Controls.Add(this.StepNum);
@@ -163,7 +151,6 @@ namespace DZ7
         private System.Windows.Forms.Button Game;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label TimerGame;
-        private System.Windows.Forms.Button StopGame;
         private System.Windows.Forms.Label RndNum;
     }
 }
